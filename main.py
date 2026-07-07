@@ -1,9 +1,10 @@
 import sys
 from json import dumps
 
-from .services.ts_runner import parse_log_file
+from balatromp_insights.services.ts_runner import parse_log_file
 
-def run_pipeline():
+def main():
+    
     path = sys.argv[1] if len(sys.argv) > 1 else None
 
     if not path:
@@ -14,3 +15,6 @@ def run_pipeline():
 
     print(f"Parsed {len(games)} games")
     print(dumps(games[0], indent=2) if games else "(no games found)")
+
+if __name__ == "__main__":
+    main()

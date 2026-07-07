@@ -19,3 +19,4 @@ uv sync --all-groups
 
 ```
 uv run main.py {file(s).log}
+```

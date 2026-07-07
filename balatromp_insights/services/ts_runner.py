@@ -2,7 +2,7 @@ import subprocess
 from pathlib import Path
 from json import loads
 
-from ..config import TS_ENTRYPOINT, WEB_PARSER_DIR
+from balatromp_insights.config import TS_ENTRYPOINT, WEB_PARSER_DIR
 
 def parse_log_file(log_path: str | Path) -> list[dict]:
     """
