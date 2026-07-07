@@ -1,6 +1,8 @@
 import sys
 from json import dumps
 
+from balatromp_insights.parsers.game_json.json_parser import GameLog
+
 from balatromp_insights.parsers.game_logs.parse_log import parse_log_file
 
 def main():
@@ -11,10 +13,14 @@ def main():
         print("Usage: python parse_log.py <path-to-log-file>")
         sys.exit(1)
         
-    games = parse_log_file(path)
+    # games = parse_log_file(path)
+ 
+    # print(f"Parsed {len(games)} games")
+    # print(dumps(games[0], indent=2) if games else "(no games found)")
 
-    print(f"Parsed {len(games)} games")
-    print(dumps(games[0], indent=2) if games else "(no games found)")
+    game = parse_log_file(path)[0]
+    game_log = GameLog.from_json(game)
+    print(game_log)
 
 if __name__ == "__main__":
     main()
