@@ -1,7 +1,7 @@
 import sys
 from json import dumps
 
-from balatromp_insights.services.ts_runner import parse_log_file
+from balatromp_insights.parsers.game_logs.parse_log import parse_log_file
 
 def main():
     

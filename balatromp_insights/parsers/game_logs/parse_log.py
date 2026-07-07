@@ -1,8 +1,8 @@
-import subprocess
+from subprocess import run as _subprocess_run
 from pathlib import Path
 from json import loads
 
-from balatromp_insights.config import TS_ENTRYPOINT, WEB_PARSER_DIR
+from balatromp_insights.config import TS_ENTRYPOINT, LOG_PARSER_DIR
 
 def parse_log_file(log_path: str | Path) -> list[dict]:
     """
@@ -15,9 +15,9 @@ def parse_log_file(log_path: str | Path) -> list[dict]:
     if not log_path.exists():
         raise FileNotFoundError(log_path)
 
-    result = subprocess.run(
+    result = _subprocess_run(
         ["pnpm", "exec", "tsx", str(TS_ENTRYPOINT), str(log_path)],
-        cwd=WEB_PARSER_DIR,
+        cwd=LOG_PARSER_DIR,
         capture_output=True,
         text=True,
     )
