@@ -18,5 +18,5 @@ uv sync --all-groups
 ## test
 
 ```
-uv run main.py {file(s).log}
+uv run test_run.py {file(s).log}
 ```
