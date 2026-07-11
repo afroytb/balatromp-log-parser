@@ -89,7 +89,15 @@ CREATE TABLE IF NOT EXISTS games (
     opponent_reroll_cost_total INTEGER NOT NULL,
     opponent_vouchers INTEGER NOT NULL,
     winner: WinnerOption | None,
-    current_pvp_blind INTEGER
+    current_pvp_blind INTEGER,
+
+    FOREIGN KEY(host_mod_list_id) REFERENCES mod_lists(mod_list_id),
+    FOREIGN KEY(guest_mod_list_id) REFERENCES mod_lists(mod_list_id),
+    FOREIGN KEY(log_owner_final_jokers) REFERENCES joker_sets(joker_set_id),
+    FOREIGN KEY(opponent_final_jokers) REFERENCES joker_sets(joker_set_id),
+    FOREIGN KEY(log_owner_vouchers) REFERENCES voucher_sets(voucher_set_id),
+    FOREIGN KEY(opponent_vouchers) REFERENCES voucher_sets(voucher_set_id)
+    
 )
 
 CREATE TABLE IF NOT EXISTS shop_spending (
