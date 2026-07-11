@@ -1,10 +1,10 @@
 CREATE TABLE IF NOT EXISTS jokers (
-    joker_id INT PRIMARY KEY,
+    joker_id INTEGER PRIMARY KEY,
     name TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS joker_sets (
-    joker_set_id INT PRIMARY KEY
+    joker_set_id INTEGER PRIMARY KEY
 );
 
 CREATE TABLE IF NOT EXISTS joker_set_items (
@@ -19,12 +19,12 @@ CREATE TABLE IF NOT EXISTS joker_set_items (
 );
 
 CREATE TABLE IF NOT EXISTS vouchers (
-    voucher_id INT PRIMARY KEY,
+    voucher_id INTEGER PRIMARY KEY,
     name TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS voucher_sets (
-    voucher_set_id INT PRIMARY KEY
+    voucher_set_id INTEGER PRIMARY KEY
 );
 
 CREATE TABLE IF NOT EXISTS voucher_set_items (
@@ -39,12 +39,12 @@ CREATE TABLE IF NOT EXISTS voucher_set_items (
 );
 
 CREATE TABLE IF NOT EXISTS mods (
-    mod_id INT PRIMARY KEY,
+    mod_id INTEGER PRIMARY KEY,
     name TEXT NOT NULL UNIQUE
 );
 
 CREATE TABLE IF NOT EXISTS mod_lists (
-    mod_list_id INT PRIMARY KEY
+    mod_list_id INTEGER PRIMARY KEY
 );
 
 CREATE TABLE IF NOT EXISTS mod_list_items (
@@ -58,7 +58,7 @@ CREATE TABLE IF NOT EXISTS mod_list_items (
 );
 
 CREATE TABLE IF NOT EXISTS games (
-    game_id INT PRIMARY KEY,
+    game_id INTEGER PRIMARY KEY,
     host TEXT,
     guest TEXT,
     lobby_code TEXT,
