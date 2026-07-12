@@ -4,6 +4,10 @@ from json import dumps
 from balatromp_insights.parsers.game_json.json_parser import GameLog
 
 from balatromp_insights.parsers.game_logs.parse_log import parse_log_file
+from balatromp_insights.database.init import create_database
+
+from balatromp_insights.config import BASE_DIR
+from balatromp_insights.database.connection import get_connection
 
 def main():
     
@@ -12,7 +16,9 @@ def main():
     if not path:
         print("Usage: python parse_log.py <path-to-log-file>")
         sys.exit(1)
-        
+    
+    create_database()
+    
     # games = parse_log_file(path)
  
     # print(f"Parsed {len(games)} games")
