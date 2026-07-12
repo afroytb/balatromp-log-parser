@@ -1,5 +1,4 @@
 import sqlite3
-from pathlib import Path
 
 from balatromp_insights.config import DATABASE_PATH
 
